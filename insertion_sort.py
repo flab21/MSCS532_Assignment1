@@ -12,7 +12,16 @@ def insertion_sort(arr):
 
 
 if __name__ == "__main__":
-    data = [5, 2, 9, 1, 5, 6]
-    print("Before:", data)
-    insertion_sort(data)
-    print("After:", data)
+    test_cases = [
+        [5, 2, 9, 1, 5, 6],   # general case
+        [3, 3, 3, 3],         # all duplicate values
+        [7],                  # single element
+        [],                   # empty list
+    ]
+
+    for case in test_cases:
+        original = case.copy()
+        insertion_sort(case)
+        print(f"Before: {original}")
+        print(f"After:  {case}")
+        print()
